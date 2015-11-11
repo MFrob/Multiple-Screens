@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		217A05061BF0E48300F0F216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217A05051BF0E48300F0F216 /* AppDelegate.swift */; };
-		217A05081BF0E48300F0F216 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217A05071BF0E48300F0F216 /* ViewController.swift */; };
+		217A05081BF0E48300F0F216 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217A05071BF0E48300F0F216 /* FirstViewController.swift */; };
 		217A050B1BF0E48300F0F216 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 217A05091BF0E48300F0F216 /* Main.storyboard */; };
 		217A050D1BF0E48400F0F216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 217A050C1BF0E48400F0F216 /* Assets.xcassets */; };
 		217A05101BF0E48400F0F216 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 217A050E1BF0E48400F0F216 /* LaunchScreen.storyboard */; };
+		5241B0F81BF368D9007D1130 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241B0F71BF368D9007D1130 /* InputViewController.swift */; };
+		5241B0FA1BF3692A007D1130 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241B0F91BF3692A007D1130 /* Story.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		217A05021BF0E48300F0F216 /* Mad Libs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mad Libs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		217A05051BF0E48300F0F216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		217A05071BF0E48300F0F216 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		217A05071BF0E48300F0F216 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		217A050A1BF0E48300F0F216 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		217A050C1BF0E48400F0F216 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		217A050F1BF0E48400F0F216 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		217A05111BF0E48400F0F216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5241B0F71BF368D9007D1130 /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		5241B0F91BF3692A007D1130 /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				217A05051BF0E48300F0F216 /* AppDelegate.swift */,
-				217A05071BF0E48300F0F216 /* ViewController.swift */,
+				217A05071BF0E48300F0F216 /* FirstViewController.swift */,
+				5241B0F71BF368D9007D1130 /* InputViewController.swift */,
+				5241B0F91BF3692A007D1130 /* Story.swift */,
 				217A05091BF0E48300F0F216 /* Main.storyboard */,
 				217A050C1BF0E48400F0F216 /* Assets.xcassets */,
 				217A050E1BF0E48400F0F216 /* LaunchScreen.storyboard */,
@@ -135,8 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				217A05081BF0E48300F0F216 /* ViewController.swift in Sources */,
+				5241B0F81BF368D9007D1130 /* InputViewController.swift in Sources */,
+				217A05081BF0E48300F0F216 /* FirstViewController.swift in Sources */,
 				217A05061BF0E48300F0F216 /* AppDelegate.swift in Sources */,
+				5241B0FA1BF3692A007D1130 /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +294,7 @@
 				217A05161BF0E48400F0F216 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
