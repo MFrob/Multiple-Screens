@@ -10,17 +10,16 @@ import Foundation
 
 class Story {
     var story:[String]
+    var wordInt:Int
+    var words:[String]
     
     // Init class with random textfile.
     init(){
+        wordInt = 0
         let randomNumber = Int(arc4random_uniform(UInt32(4)))
         let filename = "madlib" + String(randomNumber)
         story = Story.loadText(filename)
-    }
-    
-    // Init class with given textfile.
-    init(filename:String){
-        story = Story.loadText(filename)
+        words = Story.getWordTypesStory(story)
     }
     
     // Load textfile.
@@ -29,7 +28,15 @@ class Story {
         // Read from file
         do {
             let content = try NSString(contentsOfFile: filePath!, encoding: NSUTF8StringEncoding)
-            return content.componentsSeparatedByString("\n")
+            let lines = content.componentsSeparatedByString("\n")
+            var result = [String]()
+            for line in lines {
+                let words = line.componentsSeparatedByString(" ")
+                for word in words {
+                    result.append(word)
+                }
+            }
+            return result
         }
         catch {
             print("Failed to read file")
@@ -38,10 +45,10 @@ class Story {
     }
     
     // Returns the word types that the user has to fill in.
-    func getWordTypesStory() -> [String] {
+    private class func getWordTypesStory(story:[String]) -> [String] {
         var result = [String]()
         for word in story {
-            if word[word.startIndex] == "<" && word[word.endIndex] == ">" {
+            if !word.isEmpty && String(word.characters.first!) == "<" && String(word.characters.last!) == ">" {
                 result.append(word)
             }
         }
@@ -49,15 +56,15 @@ class Story {
     }
     
     // Returns the story that the user made up.
-    func makeStory(words:[String]) -> String {
+    func makeStory() -> String {
         var completeStory = ""
         var i = 0
         for word in story {
-            if word[word.startIndex] == "<" && word[word.endIndex] == ">" {
-                completeStory = completeStory + words[i]
+            if !word.isEmpty && String(word.characters.first!) == "<" && String(word.characters.last!) == ">" {
+                completeStory = completeStory + words[i] + " "
                 i++
             } else {
-                completeStory = completeStory + word
+                completeStory = completeStory + word + " "
             }
         }
         return completeStory

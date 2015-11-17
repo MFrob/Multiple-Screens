@@ -47,7 +47,7 @@
                                         </constraints>
                                         <state key="normal" title="Get Started"/>
                                         <connections>
-                                            <segue destination="auY-fc-eWP" kind="presentation" id="KPp-Nm-dIN"/>
+                                            <segue destination="auY-fc-eWP" kind="show" identifier="getStarted" id="T2k-mP-Ujl"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -71,7 +71,7 @@
         <!--Input Screen-->
         <scene sceneID="QEO-7P-2Bo">
             <objects>
-                <viewController id="auY-fc-eWP" userLabel="Input Screen" sceneMemberID="viewController">
+                <viewController id="auY-fc-eWP" userLabel="Input Screen" customClass="InputViewController" customModule="Mad_Libs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8Fu-v0-Ox3"/>
                         <viewControllerLayoutGuide type="bottom" id="0oS-29-lPD"/>
@@ -120,7 +120,7 @@
                                                         </constraints>
                                                         <state key="normal" title="Ok"/>
                                                         <connections>
-                                                            <segue destination="V7g-7J-ZDg" kind="presentation" id="jfu-GS-abv"/>
+                                                            <segue destination="V7g-7J-ZDg" kind="show" identifier="makeStory" id="e8c-Mr-lcV"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -173,6 +173,12 @@
                             <constraint firstItem="0oS-29-lPD" firstAttribute="top" secondItem="QXO-PI-MYF" secondAttribute="bottom" constant="40" id="vtN-Ht-uqe"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="0O9-Lb-eD6" id="VX8-EK-2N7"/>
+                        <outlet property="descriptionLabel" destination="bqY-OB-Wjv" id="Ihd-Ov-tCP"/>
+                        <outlet property="textInput" destination="Pcz-bv-PI5" id="TWC-62-jzf"/>
+                        <outlet property="wordsLeftLabel" destination="wcb-gX-BnZ" id="wrh-8O-BzD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rrd-nz-IIY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,7 +187,7 @@
         <!--Output Screen-->
         <scene sceneID="cbt-7h-Qzc">
             <objects>
-                <viewController id="V7g-7J-ZDg" userLabel="Output Screen" sceneMemberID="viewController">
+                <viewController id="V7g-7J-ZDg" userLabel="Output Screen" customClass="OutputViewController" customModule="Mad_Libs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cXG-Wy-cM1"/>
                         <viewControllerLayoutGuide type="bottom" id="an3-4I-hka"/>
@@ -200,26 +206,37 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Story" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qc-dp-G44">
-                                        <rect key="frame" x="0.0" y="192" width="580" height="107"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="582-tx-Pwj">
+                                        <rect key="frame" x="0.0" y="192" width="580" height="150"/>
                                         <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="dz5-hK-Eqa"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQU-Fp-CNZ">
-                                        <rect key="frame" x="222" y="309" width="136" height="233"/>
+                                        <rect key="frame" x="222" y="352" width="136" height="190"/>
                                         <animations/>
                                         <state key="normal" title="Make Another Story"/>
+                                        <connections>
+                                            <segue destination="auY-fc-eWP" kind="show" identifier="anotherStory" id="BVJ-6U-J9w"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
                                 <constraints>
                                     <constraint firstItem="9mJ-5T-rbU" firstAttribute="leading" secondItem="hVi-zA-DQZ" secondAttribute="leading" id="63d-fC-eMG"/>
-                                    <constraint firstAttribute="trailing" secondItem="0qc-dp-G44" secondAttribute="trailing" id="K9O-xT-Ek8"/>
-                                    <constraint firstItem="0qc-dp-G44" firstAttribute="leading" secondItem="hVi-zA-DQZ" secondAttribute="leading" id="UoS-hm-KBN"/>
+                                    <constraint firstAttribute="trailing" secondItem="582-tx-Pwj" secondAttribute="trailing" constant="269" id="Zye-Fk-kqA"/>
+                                    <constraint firstItem="582-tx-Pwj" firstAttribute="leading" secondItem="hVi-zA-DQZ" secondAttribute="leading" id="qTK-nR-YgX"/>
                                     <constraint firstAttribute="trailing" secondItem="9mJ-5T-rbU" secondAttribute="trailing" id="rrT-gN-ksl"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Zye-Fk-kqA"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <animations/>
@@ -231,6 +248,9 @@
                             <constraint firstAttribute="trailing" secondItem="hVi-zA-DQZ" secondAttribute="trailing" constant="10" id="i4d-TY-pVs"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="theStory" destination="582-tx-Pwj" id="LTv-gH-AiU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WCz-rC-rBi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -240,4 +260,7 @@
     <resources>
         <image name="madlibs" width="282" height="308"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="BVJ-6U-J9w"/>
+    </inferredMetricsTieBreakers>
 </document>
