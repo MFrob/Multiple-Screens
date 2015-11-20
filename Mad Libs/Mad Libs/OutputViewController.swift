@@ -13,7 +13,7 @@ class OutputViewController: UIViewController {
     var story:Story!
     
     // label outlet
-    @IBOutlet weak var theStory: UILabel!
+    @IBOutlet weak var theStory: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

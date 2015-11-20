@@ -48,7 +48,7 @@ class Story {
     private class func getWordTypesStory(story:[String]) -> [String] {
         var result = [String]()
         for word in story {
-            if !word.isEmpty && String(word.characters.first!) == "<" && String(word.characters.last!) == ">" {
+            if !word.isEmpty && word.characters.contains("<") && word.characters.contains(">") {
                 result.append(word)
             }
         }
@@ -60,7 +60,7 @@ class Story {
         var completeStory = ""
         var i = 0
         for word in story {
-            if !word.isEmpty && String(word.characters.first!) == "<" && String(word.characters.last!) == ">" {
+            if !word.isEmpty && word.characters.contains("<") && word.characters.contains(">") {
                 completeStory = completeStory + words[i] + " "
                 i++
             } else {
