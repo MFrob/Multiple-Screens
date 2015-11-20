@@ -17,7 +17,6 @@ class OutputViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("\n\n\n\n\n\n"+story.makeStory()+"\n\n\n\n\n")
         theStory.text = story.makeStory()
         // Do any additional setup after loading the view, typically from a nib.
     }
